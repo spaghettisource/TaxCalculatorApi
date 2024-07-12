@@ -5,7 +5,7 @@ namespace TaxCalculatorApi.Domain
     public class TaxPayer
     {
         [Required]
-        [RegularExpression(@"^[a-zA-Z\s]+$", ErrorMessage = "FullName must contain only letters and spaces.")]
+        [RegularExpression(@"^[A-Za-z]+([-'][A-Za-z]+)*\s[A-Za-z]+([-'][A-Za-z]+)*$", ErrorMessage = "FullName must contain only letters and spaces. Should have at least two names")]
         [MinLength(3)]
         public string FullName { get; set; }
 
